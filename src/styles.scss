@@ -16,3 +16,70 @@
 @import "./sass/sections/contact";
 @import "./sass/sections/hero";
 @import "./sass/sections/projects";
+
+.wrapper {
+    display: flex;
+    margin: 0;
+}
+
+.static-txt {
+    margin-top: 10px;
+}
+
+.wrapper .dynamic-txts {
+    line-height: 90px;
+    height: 90px;
+    overflow: hidden;
+}
+
+.dynamic-txts li {
+    list-style: none;
+    color: #00cdac;
+    top: 0;
+    position: relative;
+    animation: slide 9s steps(3) infinite;
+}
+
+@keyframes slide {
+    100% {
+        top: -270px;
+    }
+}
+
+.dynamic-txts li {
+    position: relative;
+}
+
+.dynamic-txts li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    border-left: 2px solid #00cdac;
+    animation: typing 3s steps(20) infinite;
+}
+
+@keyframes typing {
+    40%, 
+    60% {
+        left: calc(100% + 30px);
+    }
+    100% {
+        left: 0;
+    }
+}
+
+#load-more {
+    cursor: pointer;
+}
+
+#projects .row {
+    display: none;
+}
+
+#projects .row:nth-child(2),
+#projects .row:nth-child(3) {
+    display: flex;
+}
