@@ -8,6 +8,9 @@ initTiltEffect();
 let loadMoreBtn = document.querySelector('#load-more');
 let currentItem = 2;
 
+let year = document.getElementById("year");
+year.innerHTML = new Date().getFullYear();
+
 loadMoreBtn.onclick = () => {
     let rows = [...document.querySelectorAll('#projects .row')];
     for (var i = currentItem; i < currentItem + 2 && i < rows.length; i++) {
